@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "@create-figma-plugin/ui": "^4.0.3",
+    "@create-figma-plugin/utilities": "^4.0.3",
+    "preact": ">=10",
+    "prismjs": "1.29.0",
+    "react-simple-code-editor": "0.13.1"
+  },
+  "devDependencies": {
+    "@create-figma-plugin/build": "^4.0.3",
+    "@create-figma-plugin/tsconfig": "^4.0.3",
+    "@figma/plugin-typings": "1.109.0",
+    "@types/prismjs": "1.26.3",
+    "typescript": ">=5"
+  },
+  "scripts": {
+    "build": "build-figma-plugin --typecheck --minify",
+    "dev": "build-figma-plugin --typecheck --watch"
+  },
+  "figma-plugin": {
+    "editorType": [
+      "figma"
+    ],
+    "id": "figma-sync-github",
+    "name": "Figma Sync Github",
+    "main": "src/main.ts",
+    "ui": "src/ui.tsx"
+  }
+}

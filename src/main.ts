@@ -175,15 +175,15 @@ async function extractIconsFromFigma(): Promise<GroupInfo[]> {
       // 1. 格式化 name（小写、替换特殊字符等）
       let formattedName = icon.name
         .toLowerCase()
-        .replace(/[^a-z0-9]+/g, "_")
-        .replace(/^_+|_+$/g, "")
-        .replace(/_+/g, "_");
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "")
+        .replace(/-+/g, "-");
 
       // 2. 确保唯一性
       let uniqueName = formattedName;
       let counter = 1;
       while (usedNames.has(uniqueName)) {
-        uniqueName = `${formattedName}_${counter}`;
+        uniqueName = `${formattedName}-${counter}`;
         counter++;
       }
 
